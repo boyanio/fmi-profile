@@ -1,0 +1,13 @@
+﻿<div class="row">
+	<div class="col-md-12 wait-indicator-row" ng-show="isLoading" my-wait-indicator="isLoading"></div>
+	
+	<div class="col-md-12 media" ng-repeat="evt in events">
+		<a class="pull-left" href="#">
+			<img class="media-object" ng-src="{{evt.user.picture}}" alt="">
+		</a>
+		<div class="media-body">
+			<h4 class="media-heading">{{evt.date | date: 'dd.MM.yyyy HH:mm' }}</h4>
+			<p>{{evt.message}}</p>
+		</div>
+	</div>
+</div>

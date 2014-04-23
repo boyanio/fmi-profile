@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="fmi">
+    <head>
+        <title>ФМИ профил</title>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="stylesheet" href="js/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="js/bootstrap/css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="css/site.css" />
+    </head>
+    <body>
+		<div class="container">
+			<div class="jumbotron">
+				<div class="media">
+				  <a class="pull-left" href="#">
+					<img class="media-object" src="/img/angular.png" alt="Профилна снимка" style="width: 200px;">
+				  </a>
+				  <div class="media-body">
+					<h1 class="media-heading">Боян Михайлов</h1>
+					<p>Софтуерно инженерство, 2ри курс</p>
+				  </div>
+				</div>
+			</div>
+		
+			<nav class="navbar navbar-default" role="navigation" my-navigation></nav>
+			
+			<div class="route-container" ng-view></div>
+		</div>
+
+		<script src="js/jquery/jquery-1.9.1.js"></script>	
+		<script src="js/bootstrap/js/bootstrap.js"></script>
+		
+		<script src="js/angular/angular.js"></script>
+		<script src="js/angular/angular-route.js"></script>
+		<script src="js/angular/angular-resource.js"></script>
+		<script src="js/angular/i18n/angular-locale_bg-bg.js"></script>
+		<script src="js/angular/ui-bootstrap-tpls-0.10.0.js"></script>
+		
+		<script src="js/misc/spin.js"></script>
+		
+		<script src="js/app/app.js"></script>
+		<script src="js/app/controllers/WallCtrl.js"></script>
+		<script src="js/app/controllers/HomeworksCtrl.js"></script>
+		<script src="js/app/controllers/GradesCtrl.js"></script>
+		<script src="js/app/controllers/ProfileCtrl.js"></script>
+		<script src="js/app/directives/navigation/navigation.js"></script>
+		<script src="js/app/directives/waitIndicator.js"></script>
+		<script src="js/app/directives/stars.js"></script>
+		<script src="js/app/services/eventService.js"></script>
+		<script src="js/app/services/courseService.js"></script>
+		<script src="js/app/services/profileService.js"></script>
+    </body>
+</html>

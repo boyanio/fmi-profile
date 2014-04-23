@@ -1,0 +1,26 @@
+﻿<div class="row">
+	<div class="col-md-12 wait-indicator-row" ng-show="isLoading" my-wait-indicator="isLoading"></div>
+
+	<div class="col-md-12" ng-repeat="course in courses">
+		<h2>{{course.title}}</h2>
+		
+		<table class="table" ng-show="course.homeworks.length">
+			<thead>
+				<tr>
+					<th>Домашно</th>
+					<th>Краен срок</th>
+					<th>Предадено</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="homework in course.homeworks">
+					<td>{{homework.title}}</td>
+					<td>{{homework.deadline | date: 'short' }}</td>
+					<td>{{homework.submitted ? 'да' : 'не' }}</td>
+				</tr>
+			<tbody>
+		</table>
+		
+		<p ng-show="!course.homeworks.length">Няма регистрирани домашни за този курс</p>
+	</div>
+</div>

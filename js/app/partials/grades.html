@@ -1,0 +1,26 @@
+﻿<div class="row">
+	<div class="col-md-12 wait-indicator-row" ng-show="isLoading" my-wait-indicator="isLoading"></div>
+
+	<div class="col-md-12" ng-repeat="course in courses">
+		<h2>{{course.title}}</h2>
+		
+		<table class="table" ng-show="course.grades.length">
+			<thead>
+				<tr>
+					<th>Вид изпит</th>
+					<th>Дата</th>
+					<th>Оценка</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="grade in course.grades">
+					<td>{{grade.exam}}</td>
+					<td>{{grade.date | date: 'shortDate' }}</td>
+					<td>{{grade.mark != null ? grade.mark : 'няма' }}</td>
+				</tr>
+			<tbody>
+		</table>
+		
+		<p ng-show="!course.grades.length">Няма регистрирани оценки за този курс</p>
+	</div>
+</div>

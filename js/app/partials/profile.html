@@ -1,0 +1,42 @@
+﻿<div class="row">
+	<div class="col-md-12 wait-indicator-row" ng-show="isLoading" my-wait-indicator="isLoading"></div>
+
+	<div class="col-md-3">
+		<h2>За мен</h2>
+		<div my-wait-indicator="isLoadingProfile"></div>
+		<textarea class="form-control" style="height: 200px;" ng-model="profile.about" ng-blur="updateProfile()"></textarea>
+	</div>
+	
+	<div class="col-md-4">
+		<h2>Интереси</h2>
+		<div my-wait-indicator="isLoadingInterests"></div>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="i in interests"><span class="badge x-badge"><a ng-href="" ng-click="removeInterest(i)"><i class="glyphicon glyphicon-remove"></i></a></span> <span>{{i.name}}</span></li>
+		</ul>
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="interest.name" />
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" ng-click="addInterest()">Добави</button>
+			</span>
+		</div>
+	</div>
+	
+	<div class="col-md-5">
+		<h2>Езици за програмиране</h2>
+		<div my-wait-indicator="isLoadingLanguages"></div>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="lang in languages">
+				<span class="badge x-badge"><a ng-href="" ng-click="removeLanguage(lang)"><i class="glyphicon glyphicon-remove"></i></a></span>
+				<span class="badge" my-stars="5" stars-read-only="true" stars-selected="lang.skills"></span>
+				<span>{{lang.name}}</span>
+			</li>
+		</ul>
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="language.name" />
+			<span class="input-group-addon" my-stars="5" stars-read-only="false" stars-selected="language.skills"></span>
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" ng-click="addLanguage()">Добави</button>
+			</span>
+		</div>
+	</div>
+</div>

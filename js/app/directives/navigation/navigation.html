@@ -1,0 +1,9 @@
+<div class="collapse navbar-collapse">
+	<ul class="nav navbar-nav">
+		<li ng-repeat="route in routes" ng-class="{ active: isCurrent(route.route) }">
+			<a ng-href="#{{route.href}}">
+				<span>{{route.title}}</span>
+			</a>
+		</li>
+	</ul>
+</div>
